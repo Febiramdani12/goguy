@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Auth;
 
 class DashboardSettingController extends Controller
 {
+        public function __construct()
+    {
+        $this->middleware('verified');
+    }
     /**
      * Show the application dashboard.
      *

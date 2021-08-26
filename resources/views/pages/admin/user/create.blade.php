@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    User Management    
+    User  
 @endsection
 
 @section('content')
@@ -10,7 +10,7 @@
             <div class="dashboard-heading">
             <h2 class="dashboard-title">User </h2>
             <p class="dashboard-subtitle">
-                Create New User 
+            Tambah User Baru
             </p>
             </div>
             <div class="dashboard-content">
@@ -32,19 +32,19 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="">Nama User</label>
+                                        <label for="">Nama</label>
                                         <input type="text" name="name" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="">Email User</label>
+                                        <label for="">Email</label>
                                         <input type="email" name="email" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="">Password User</label>
+                                        <label for="">Password</label>
                                         <input type="password" name="password" class="form-control" required>
                                     </div>
                                 </div>
@@ -61,7 +61,7 @@
                             <div class="row">
                                 <div class="col text-right">
                                     <button type="submit" class="btn btn-success px-5">
-                                        Save Now
+                                        Save
                                     </button>
                                 </div>
                             </div>

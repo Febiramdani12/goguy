@@ -9,20 +9,14 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                    <a class="nav-link" href="{{route('home')}}">Home </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('categories')}}">Categories</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Rewards</a>
+                    <a <a  class="nav-link"  href="{{route('dashboard')}}" class="dropdown-item">Dashboard</a>
                     </li>
                     @guest
                     <li class="nav-item">
-                    <a class="nav-link" href="{{route('register')}}">Sign Up</a>
+                    <a class="nav-link" href="{{route('register')}}">Daftar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-success nav-link px-4 text-white" href="{{route('login')}}">Sign In</a>
+                        <a class="btn btn-success nav-link px-4 text-white" href="{{route('login')}}">Login</a>
                     </li>
                     @endguest
                 </ul>
@@ -36,14 +30,13 @@
                     Hi, {{Auth::user()->name}}
                 </a>
                 <div class="dropdown-menu">
-                <a  class="nav-link"  href="{{route('dashboard')}}" class="dropdown-item">Dashboard</a>
-                    <a href="{{route('dashboard-settings-account')}}" class="dropdown-item" >Settings</a>
+                    <a href="{{route('dashboard-settings-account')}}" class="dropdown-item" >Setting</a>
                     <div class="dropdown-divider"></div>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="dropdown-item">Logout</a>
                     
                 </div>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
+                @csrf
                     </form>
                 </li>
                 <li class="nav-item">
@@ -67,7 +60,7 @@
                     Hi, {{ Auth::user()->name }}
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
+                @csrf
                 </form>
                 </li>
                 <li class="nav-item">

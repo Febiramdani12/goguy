@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Store Cart Page    
+    Go-Guy | Keranjang   
 @endsection
 
 @section('content')
@@ -13,10 +13,10 @@
             <nav>
               <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                  <a href="/index.html">Home</a>
+                  <a href="/">Home</a>
                 </li>
                 <li class="breadcrumb-item active">
-                  Cart
+                  Keranjang
                 </li>
               </ol>
             </nav>
@@ -32,10 +32,10 @@
             <table class="table table-borderless table-cart">
               <thead>
                 <tr>
-                  <td>Image</td>
-                  <td>Name &amp; Seller</td>
-                  <td>Price</td>
-                  <td>Menu</td>
+                  <td>Gambar</td>
+                  <td>Nama</td>
+                  <td>Harga</td>
+                  <td></td>
                 </tr>
               </thead>
               <tbody>
@@ -51,11 +51,11 @@
                   </td>
                   <td style="width: 30%;">
                     <div class="product-title">{{$cart->product->name}}</div>
-                    <div class="product-subtitle">by {{$cart->product->user->store_name}}</div>
+                    <div class="product-subtitle">Jasa Oleh :  {{$cart->product->user->store_name}}</div>
                   </td>
                   <td style="width: 30%;">
                   <div class="product-title">Rp. {{number_format($cart->product->price)}}</div>
-                    <div class="product-subtitle">Rupiah</div>
+                    <div class="product-subtitle"></div>
                   </td>
                   <td style="width: 20%;">
                   <form action="{{route('cart-delete', $cart->id)}}" method="GET">
@@ -78,7 +78,7 @@
             <hr />
           </div>
           <div class="col-12">
-            <h2 class="mb-4">Shipping Details</h2>
+            <h2 class="mb-4">Lokasi Pengerjaan</h2>
           </div>
         </div>
       <form action="{{route('checkout')}}" method="post" id="locations" enctype="multipart/form-data">
@@ -87,19 +87,14 @@
               <div class="row mb-2" data-aos="fade-up" data-aos-delay="200">
           <div class="col-md-6">
             <div class="form-group">
-              <label for="address_one">Alamat 1</label>
-              <input type="text" id="address_one" name="address_one" value="Setra Duta Semara" class="form-control">
+              <label for="address_one">Alamat</label>
+              <input type="text" id="address_one" name="address_one" value="" class="form-control">
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="address_two">Alamat 2</label>
-              <input type="text" id="address_two" name="address_two" value="Jalan sumatra" class="form-control">
-            </div>
-          </div>
+       
           <div class="col-md-4">
             <div class="form-group">
-              <label for="provinces_id">Provinsi</label>
+              <label for="provinces_id">Kecamatan</label>
               <select name="provinces_id" id="provinces_id" class="form-control" v-if="provinces" v-model="provinces_id">
               <option v-for="province in provinces" :value="province.id">@{{province.name}}</option>
               </select>
@@ -108,7 +103,7 @@
           </div>
           <div class="col-md-4">
             <div class="form-group">
-              <label for="regencies_id">Kota</label>
+              <label for="regencies_id">Desa</label>
               <select name="regencies_id" id="regencies_id" class="form-control" v-if="regencies" v-model="regencies_id">
               <option v-for="regency in regencies" :value="regency.id">@{{regency.name}}</option>
               </select>
@@ -117,20 +112,15 @@
           </div>
           <div class="col-md-4">
             <div class="form-group">
-              <label for="zip_code">Kode Post</label>
-              <input type="text" id="zip_code" name="zip_code" value="98312" class="form-control">
+              <label for="zip_code">Kode Pos</label>
+              <input type="text" id="zip_code" name="zip_code" value="" class="form-control">
             </div>
           </div>
+         
           <div class="col-md-6">
             <div class="form-group">
-              <label for="country">Country</label>
-              <input type="text" id="country" name="country" value="Indonesia" class="form-control">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="phone_number">Mobile</label>
-              <input type="text" id="phone_number" name="phone_number" value="+628 2020 11111" class="form-control">
+              <label for="phone_number">No HP</label>
+              <input type="text" id="phone_number" name="phone_number" value="+62" class="form-control">
             </div>
           </div>
         </div>
@@ -139,29 +129,18 @@
             <hr />
           </div>
           <div class="col-12">
-            <h2 class="mb-1">Details Payment</h2>
+            <h2 class="mb-1">Detail Pembayaran</h2>
           </div>
         </div>
         <div class="row" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-4 col-md-2">
-            <div class="product-title">Rp. 0</div>
-            <div class="product-subtitle">Country Tax</div>
-          </div>
-          <div class="col-4 col-md-3">
-            <div class="product-title">Rp. 0</div>
-            <div class="product-subtitle">Product Insurance</div>
-          </div>
-          <div class="col-4 col-md-2">
-            <div class="product-title">Rp. 0</div>
-            <div class="product-subtitle">Ship to Jakarta</div>
-          </div>
+        
           <div class="col-4 col-md-2">
             <div class="product-title text-success">Rp. {{number_format($totalPrice ?? 0)}}</div>
             <div class="product-subtitle">Total</div>
           </div>
           <div class="col-8 col-md-3">
             <button type="submit" class="btn btn-success mt-4 px-4 btn-block">
-              Checkout Now
+              Checkout
             </button>
           </div>
         </div>

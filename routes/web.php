@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Auth\PasswordResetLinkController;
+use App\Http\Controllers\Auth\NewPasswordController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +17,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/forgot-password', 'PasswordResetLinkController@create')->name('password.request');
+
+Route::get('/forgot-password', 'PasswordResetLinkController@store')->name('password.email');
+
+Route::get('/reset-password/{token}', 'NewPasswordController@create')->name('password.reset');
+
+Route::get('/reset-password ', 'NewPasswordController@store')->name('password.update');
+
+
+
 
 
 
@@ -69,11 +83,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/dashboard/account/{redirect}', 'DashboardSettingController@update')->name('dashboard-settings-redirect');
 });
 
+Route::get('/admin/trx/', 'TrxAdminController@index')->name('trx');
+
 //     ->middleware(['auth', 'admin'])
 Route::prefix('admin')
     ->namespace('Admin')
     ->middleware(['auth', 'admin'])
     ->group(function () {
+        Route::post('/mark-as-read', 'DashboardController@markNotification')->name('markNotification');
         Route::get('/', 'DashboardController@index')->name('admin-dashboard');
         Route::resource('category', 'CategoryController');
         Route::resource('user', 'UserController');
@@ -81,4 +98,7 @@ Route::prefix('admin')
         Route::resource('product-gallery', 'ProductGalleryController');
     });
 
-Auth::routes();
+
+Auth::routes(['verify' => true]);
+
+Route::get('/home', 'HomeController@index')->name('home');

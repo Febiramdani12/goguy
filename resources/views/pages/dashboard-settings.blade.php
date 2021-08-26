@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('title')
-    Store Settings    
+    Dashboard Pengaturan    
 @endsection
 
 @section('content')
@@ -10,9 +10,9 @@
         <div class="section-content section-dashboard-home" data-aos="fade-up">
           <div class="container-fluid">
             <div class="dashboard-heading">
-              <h2 class="dashboard-title">Store Settings</h2>
+              <h2 class="dashboard-title">Pengaturan Jasa</h2>
               <p class="dashboard-subtitle">
-                Make store that profitable
+               
               </p>
             </div>
             <div class="dashboard-content">
@@ -25,7 +25,7 @@
                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label for="">Nama Toko</label>
+                              <label for="">Nama</label>
                               <input type="text" name="store_name" class="form-control" value="{{$user->store_name}}" v-model="name" autofocus />
                             </div>
                           </div>
@@ -42,17 +42,18 @@
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label for="">Store</label>
+                              <label for="">Status Toko :
+                                @if($user->store_status == 1)         
+                                      Buka         
+                                @else
+                                     Tutup       
+                                @endif
+                              </label>
                               <p class="text-muted">Apakah anda juga ingin membuka toko?</p>
-                              <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" name="store_status" id="openStoreTrue" class="custom-control-input" value="1" {{$user->store_status == 1 ? 'checked' : ''}}>
-                                <label for="openStoreTrue" class="custom-control-label">Buka Toko</label>
-                              </div>
-                              <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" name="is_store_open" id="openStoreFalse"
-                                  class="custom-control-input" value="0" {{$user->store_status == 0 || $user->store_status == NULL ? 'checked' : ''}}>
-                                <label for="openStoreFalse" class="custom-control-label">Tutup Sementara</label>
-                              </div>
+                              <select name="store_status" class="form-control">
+                                    <option value="1">Buka</option>
+                                    <option value="0">Tutup</option>
+                              </select>
                             </div>
                           </div>
                         </div>

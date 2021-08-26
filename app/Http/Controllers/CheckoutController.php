@@ -24,7 +24,7 @@ class CheckoutController extends Controller
 
 
         // proses checkout
-        $code = 'STORE-' . mt_rand(00000, 99999);
+        $code = 'GO-GUY ' . mt_rand(00000, 99999);
         $carts = Cart::with(['product', 'user'])
             ->where('users_id', Auth::user()->id)
             ->get();
@@ -35,7 +35,7 @@ class CheckoutController extends Controller
             'inscurance_price' => 0,
             'shipping_price' => 0,
             'total_price' => $request->total_price,
-            'transaction_status' => 'PENDING',
+            'transaction_status' => '',
             'code' => $code,
         ]);
 
@@ -47,7 +47,7 @@ class CheckoutController extends Controller
                 'transactions_id' => $transaction->id,
                 'products_id' => $cart->product->id,
                 'price' => $cart->product->price,
-                'shipping_status' => 'PENDING',
+                'shipping_status' => '',
                 'resi' => '',
                 'code' => $trx,
             ]);
@@ -70,8 +70,8 @@ class CheckoutController extends Controller
                 'gross_amount' => (int) $request->total_price,
             ],
             'customer_details' => [
-                'first_name'    => 'Galih Pratama',
-                'email'         => 'hanamura.iost@gmail.com'
+                'first_name'    => Auth::user()->name,
+                'email'         => Auth::user()->email,
             ],
             'enabled_payments' => ['gopay', 'bank_transfer'],
             'vtweb' => []

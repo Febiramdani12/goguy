@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Store Detail Page    
+    Go-Guy | Detail Jasa
 @endsection
 
 @section('content')
@@ -13,10 +13,10 @@
                         <nav>
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                    <a href="/index.html">Home</a>
+                                    <a href="/">Home</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Products Details
+                                    Detail Jasa
                                 </li>
                             </ol>
                         </nav>
@@ -54,17 +54,20 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <h1>{{ $product->name }}</h1>
-                            <div class="owner">By {{ $product->user->store_name }}</div>
+                            <div class="owner">Jasa Oleh : {{ $product->user->store_name }}</div>
+                             <div class="owner">
+                                 <a href="https://wa.me/{{ $product->user->phone_number }}?text=Halo,%20saya%20butuh%20jasa%20{{ $product->name }}">WhatsApp</a>
+                             </div>
                             <div class="price">Rp {{ number_format($product->price)}}</div>
                         </div>
                         <div class="col-lg-2" data-aos="zoom-in">
                             @auth
                         <form action="{{route('detail-add', $product->id)}}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <button type="submit" class="btn btn-success px-4 text-white btn-block mb-3">Add To Cart</button>
+                                <button type="submit" class="btn btn-success px-4 text-white btn-block mb-3">Tambah Ke Keranjang</button>
                             </form>
                             @else
-                            <a href="{{route('login')}}" class="btn btn-success px-4 text-white btn-block mb-3">Login to add</a>
+                            <a href="{{route('login')}}" class="btn btn-success px-4 text-white btn-block mb-3">Login Untuk Menambahkan</a>
                             @endauth
                         </div>
                     </div>
@@ -84,35 +87,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 col-lg-8 mt-3 mb-3">
-                            <h5>Customer Review (3)</h5>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-lg-8">
-                            <ul class="list-unstyled">
-                                <li class="media">
-                                    <img src="/images/icon-testimonial-1.png" class="mr-3 rounded-circle" alt="">
-                                    <div class="media-body">
-                                        <h5 class="mt-2 mb-1">Hazza Risky</h5>
-                                        I thought it was not good for living room. I really happy
-                                        to decided buy this product last week now feels like homey.
-                                    </div>
-                                </li>
-                                <li class="media">
-                                    <img src="/images/icon-testimonial-2.png" class="mr-3 rounded-circle" alt="">
-                                    <div class="media-body">
-                                        <h5 class="mt-2 mb-1">Anna Sukkirata</h5>
-                                        Color is great with the minimalist concept. Even I thought it was
-                                        made by Cactus industry. I do really satisfied with this.
-                                    </div>
-                                </li>
-                                <li class="media">
-                                    <img src="/images/icon-testimonial-3.png" class="mr-3 rounded-circle" alt="">
-                                    <div class="media-body">
-                                        <h5 class="mt-2 mb-1">Dakimu Wangi</h5>
-                                        When I saw at first, it was really awesome to have with.
-                                        Just let me know if there is another upcoming product like this.
-                                    </div>
+                            
                                 </li>
                             </ul>
                         </div>

@@ -22,26 +22,25 @@
       <!-- side bar -->
       <div class="border-right" id="sidebar-wrapper">
         <div class="sidebar-heading text-center">
+          <a href="/">
           <img src="/images/dashboard-store-logo.svg" class="my-4" alt="">
+        </a>
         </div>
         <div class="list-group list-group-flush">
           <a href="{{route('dashboard')}}" class="list-group-item list-group-item-action {{(request()->is('dashboard')) ? 'active' : ''}}">
             Dashboard
           </a>
           <a href="{{route('dashboard-product')}}" class="list-group-item list-group-item-action {{(request()->is('dashboard/products*')) ? 'active' : ''}}">
-            My Products
+            Jasa
           </a>
           <a href="{{route('dashboard-transaction')}}" class="list-group-item list-group-item-action  {{(request()->is('dashboard/transactions*')) ? 'active' : ''}}">
-            Transactions
-          </a>
-          <a href="{{route('dashboard-settings-store')}}" class="list-group-item list-group-item-action {{(request()->is('dashboard/settings*')) ? 'active' : ''}}">
-            Store Settings
+            Transaksi
           </a>
           <a href="{{route('dashboard-settings-account')}}" class="list-group-item list-group-item-action {{(request()->is('dashboard/account*')) ? 'active' : ''}}">
-            My Account
+            Pengaturan Akun
           </a>
           <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"   class="list-group-item list-group-item-action">
-            Sing Out
+            Sign Out
           </a>
         </div>
       </div>
@@ -68,13 +67,13 @@
                 </a>
               <div class="dropdown-menu">
                 <a  class="nav-link" class="dropdown-item">Dashboard</a>
-                    <a href="{{route('dashboard-settings-account')}}" class="dropdown-item" >Settings</a>
+                    <a href="{{route('dashboard-settings-account')}}" class="dropdown-item" >Setting</a>
                     <div class="dropdown-divider"></div>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="dropdown-item">Logout</a>
                     
                 </div>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
+                @csrf
                 </form>
                 </li>
               </li>

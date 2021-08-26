@@ -11,6 +11,10 @@ use App\User;
 
 class DashboardController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('verified');
+    }
     /**
      * Show the application dashboard.
      *

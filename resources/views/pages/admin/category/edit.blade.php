@@ -1,16 +1,16 @@
 @extends('layouts.admin')
 
 @section('title')
-    Category    
+    Edit Kategori    
 @endsection
 
 @section('content')
 <div class="section-content section-dashboard-home" data-aos="fade-up">
           <div class="container-fluid">
             <div class="dashboard-heading">
-              <h2 class="dashboard-title">Category</h2>
+              <h2 class="dashboard-title">Kategori</h2>
               <p class="dashboard-subtitle">
-                Edit Category
+                Edit Kategori
               </p>
             </div>
             <div class="dashboard-content">
@@ -33,13 +33,13 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="">Nama Kategori</label>
+                                        <label for="">Kategori</label>
                                     <input type="text" name="name" class="form-control" value="{{$item->name}}" required>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="">Photo</label>
+                                        <label for="">Foto</label>
                                         <input type="file" name="photo" class="form-control">
                                     </div>
                                 </div>
@@ -47,7 +47,7 @@
                             <div class="row">
                                 <div class="col text-right">
                                     <button type="submit" class="btn btn-success px-5">
-                                        Save Now
+                                        Save
                                     </button>
                                 </div>
                             </div>

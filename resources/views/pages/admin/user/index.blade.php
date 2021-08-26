@@ -10,7 +10,7 @@
             <div class="dashboard-heading">
               <h2 class="dashboard-title">User</h2>
               <p class="dashboard-subtitle">
-                List Of Users
+            
               </p>
             </div>
             <div class="dashboard-content">

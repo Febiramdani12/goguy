@@ -3,7 +3,7 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <p class="pt-4 pb2">
-                        2020 Copyright Store Lulung
+                        GO-GUY © 2021
                     </p>
                 </div>
             </div>

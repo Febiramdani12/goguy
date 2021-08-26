@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    User    
+    Edit User 
 @endsection
 
 @section('content')
@@ -33,19 +33,19 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="">Nama User</label>
+                                        <label for="">Nama</label>
                                         <input type="text" name="name" class="form-control" required value="{{$item->name}}">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="">Email User</label>
+                                        <label for="">Email</label>
                                         <input type="email" name="email" class="form-control" required value="{{$item->email}}">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="">Password User</label>
+                                        <label for="">Password</label>
                                         <input type="password" name="password" class="form-control">
                                         <small>Kosongkan jika tidak ingin mengganti password</small>
                                     </div>
@@ -64,7 +64,7 @@
                             <div class="row">
                                 <div class="col text-right">
                                     <button type="submit" class="btn btn-success px-5">
-                                        Save Now
+                                        Save
                                     </button>
                                 </div>
                             </div>

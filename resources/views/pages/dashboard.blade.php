@@ -1,16 +1,16 @@
 @extends('layouts.dashboard')
 
 @section('title')
-    Store Dashboard    
+    Go-Guy | Dashboard   
 @endsection
 
 @section('content')
 <div class="section-content section-dashboard-home" data-aos="fade-up">
           <div class="container-fluid">
             <div class="dashboard-heading">
-              <h2 class="dashboard-title">Dasboard</h2>
+              <h2 class="dashboard-title">Dashboard</h2>
               <p class="dashboard-subtitle">
-                Pantau Aktivitas mu hari ini!
+             
               </p>
             </div>
             <div class="dashboard-content">
@@ -19,7 +19,7 @@
                   <div class="card mb-2">
                     <div class="card-body">
                       <div class="dashboard-card-title">
-                        Customer
+                        User
                       </div>
                       <div class="dashboard-card-subtitle">
                         {{number_format($customer)}}
@@ -31,7 +31,7 @@
                   <div class="card mb-2">
                     <div class="card-body">
                       <div class="dashboard-card-title">
-                        Pendapatan
+                        Total
                       </div>
                       <div class="dashboard-card-subtitle">
                         Rp. {{number_format($revenue)}}
@@ -43,7 +43,7 @@
                   <div class="card mb-2">
                     <div class="card-body">
                       <div class="dashboard-card-title">
-                        Transaction
+                        Transaksi
                       </div>
                       <div class="dashboard-card-subtitle">
                         {{number_format($transaction_count)}}

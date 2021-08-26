@@ -18,13 +18,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                 <a href="/index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                <a href="/categories.html" class="nav-link">Categories</a>
-                </li>
-                <li class="nav-item">
-                <a href="#" class="nav-link">Rewards</a>
-                </li>
+                </li>  
             </ul>
 
             <!-- Desktop Menu -->
@@ -42,12 +36,12 @@
                     alt=""
                     class="rounded-circle mr-2 profile-picture"
                     />
-                    Hi, Angga
+                    Hi, {{ Auth::user()->name }}
                 </a>
                 <div class="dropdown-menu">
                     <a href="/dashboard.html" class="dropdown-item">Dashboard</a>
                     <a href="/dashboard-account.html" class="dropdown-item"
-                    >Settings</a
+                    >Pengaturan</a
                     >
                     <div class="dropdown-divider"></div>
                     <a href="/" class="dropdown-item">Logout</a>
@@ -63,7 +57,8 @@
             <ul class="navbar-nav d-block d-lg-none">
                 <li class="nav-item">
                 <a href="#" class="nav-link">
-                    Hi, Angga
+                Hi, {{ Auth::user()->name }}
+
                 </a>
                 </li>
                 <li class="nav-item">

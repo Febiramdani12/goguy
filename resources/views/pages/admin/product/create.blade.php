@@ -1,16 +1,16 @@
 @extends('layouts.admin')
 
 @section('title')
-Product Management
+Jasa
 @endsection
 
 @section('content')
 <div class="section-content section-dashboard-home" data-aos="fade-up">
     <div class="container-fluid">
         <div class="dashboard-heading">
-            <h2 class="dashboard-title">Product </h2>
+            <h2 class="dashboard-title">Jasa</h2>
             <p class="dashboard-subtitle">
-                Create New Product
+                Tambah Jasa Baru
             </p>
         </div>
         <div class="dashboard-content">
@@ -32,13 +32,13 @@ Product Management
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Nama Product</label>
+                                            <label for="">Nama Jasa</label>
                                             <input type="text" name="name" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Pemilik Produk</label>
+                                            <label for="">Pemilik Jasa</label>
                                             <select name="users_id" class="form-control">
                                                 @foreach ($users as $user)
                                                 <option value="{{$user->id}}">{{$user->name}}</option>
@@ -48,7 +48,7 @@ Product Management
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Kategori Barang</label>
+                                            <label for="">Kategori Jasa</label>
                                             <select name="categories_id" class="form-control">
                                                 @foreach ( $categories as $category)
                                                 <option value="{{$category->id}}">{{$category->name}}</option>
@@ -65,7 +65,7 @@ Product Management
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Deskripsi Product</label>
+                                            <label for="">Deskripsi</label>
                                             <textarea name="description" id="editor"></textarea>
                                         </div>
                                     </div>
@@ -73,7 +73,7 @@ Product Management
                                 <div class="row">
                                     <div class="col text-right">
                                         <button type="submit" class="btn btn-success px-5">
-                                            Save Now
+                                            Save
                                         </button>
                                     </div>
                                 </div>

@@ -12,18 +12,17 @@
           <div class="col-lg-6 text-center">
             <img src="/images/success.svg" class="mb-4" alt="">
             <h2>
-              Welcome to Store
+              Selamat Datang di GO-GUY
             </h2>
             <p>
               Kamu sudah berhasil terdaftar <br>
-              bersama kami. Let’s grow up now.
             </p>
             <div>
               <a class="btn btn-success w-50 mt-4" href="/dasboard.html">
-                My Dasboard
+                Dashboard
               </a>
               <a class="btn btn-signup w-50 mt-2" href="/index.html">
-                Go To Shopping
+                Lanjut Mencari Jasa
               </a>
             </div>
           </div>

@@ -30,24 +30,18 @@
             Dashboard
           </a>
           <a href="{{route('product.index')}}" class="list-group-item list-group-item-action {{(request()->is('admin/product')) ? 'active' : ''}}">
-            Products
+            Jasa
           </a>
-          <a href="{{route('product-gallery.index')}}" class="list-group-item list-group-item-action {{(request()->is('admin/product-gallery*')) ? 'active' : ''}}">
-            Galleries
+          <a href="{{route('category.index')}}" class="list-group-item list-group-item-action {{(request()->is('admin/category*')) ? 'active' : ''}}">
+            Kategori
           </a>
-        <a href="{{route('category.index')}}" class="list-group-item list-group-item-action {{(request()->is('admin/category*')) ? 'active' : ''}}">
-            Menu Categories
-          </a>
-          <a href="#" class="list-group-item list-group-item-action">
-            Transactions
+           <a href="{{route('trx')}}" class="list-group-item list-group-item-action {{(request()->is('admin/trx*')) ? 'active' : ''}}">
+            Transaksi
           </a>
           <a href="{{route('user.index')}}" class="list-group-item list-group-item-action {{(request()->is('admin/user*')) ? 'active' : ''}}">
-            Users
+            User
           </a>
 
-          <a href="/index.html" class="list-group-item list-group-item-action">
-            Sing Out
-          </a>
         </div>
       </div>
 
@@ -69,7 +63,7 @@
                 <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">
                   <img src="/images/icon-user.png" alt="" class="rounded-circle mr-2 profile-picture" />
-                  Hi, Alung
+                  Hi, {{ Auth::user()->name }}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="/">Logout</a>
@@ -80,7 +74,7 @@
             <ul class="navbar-nav d-block d-lg-none mt-3">
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  Hi, Angga
+                Hi, {{ Auth::user()->name }}
                 </a>
               </li>
               <li class="nav-item">
@@ -116,6 +110,33 @@
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
+  </script>
+  <script type="text/javascript">
+    @if(auth()->user()->is_admin)
+    function sendMarkRequest(id = null) {
+        return $.ajax("{{ route('markNotification') }}", {
+            method: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+"id": id
+            }
+        });
+    }
+    $(function() {
+        $('.mark-as-read').click(function() {
+            let request = sendMarkRequest($(this).data('id'));
+            request.done(() => {
+                $(this).parents('div.alert').remove();
+            });
+        });
+        $('#mark-all').click(function() {
+            let request = sendMarkRequest();
+            request.done(() => {
+                $('div.alert').remove();
+            })
+        });
+    });
+@endif
   </script>
   @stack('addon-script')
 </body>

@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('title')
-    Store Dashboard Product Detail
+    Dashboard Produk
 @endsection
 
 @section('content') 
@@ -9,9 +9,9 @@
         <div class="section-content section-dashboard-home" data-aos="fade-up">
           <div class="container-fluid">
             <div class="dashboard-heading">
-              <h2 class="dashboard-title">shirup Marzan</h2>
+              <h2 class="dashboard-title">Detail Jasa</h2>
               <p class="dashboard-subtitle">
-                Product Details
+                
               </p>
             </div>
             <div class="dashboard-content">
@@ -34,13 +34,13 @@
                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label for="">Product Name</label>
+                              <label for="">Jenis Jasa</label>
                             <input type="text" name="name" class="form-control" value="{{$product->name}}" />
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label for="">Price</label>
+                              <label for="">Harga</label>
                               <input type="number" name="price" class="form-control" value="{{$product->name}}" />
                             </div>
                           </div>
@@ -57,7 +57,7 @@
                           </div>
                           <div class="col-md-12">
                             <div class="form-group">
-                              <label for="">Description</label>
+                              <label for="">Deskripsi</label>
                               <textarea name="description" id="editor">{!! $product->description !!}</textarea>
                             </div>
                           </div>
@@ -65,7 +65,7 @@
                         </div>
                         <div class="row">
                           <div class="col text-right">
-                            <button type="submit" class="btn btn-success px-5 btn-block">Save Now</button>
+                            <button type="submit" class="btn btn-success px-5 btn-block">Save</button>
                           </div>
                         </div>
                       </div>
@@ -94,7 +94,7 @@
                           <input type="hidden" name="products_id" value="{{ $product->id }}">
                             <input type="file" name="photos" id="file" style="display: none;" onchange="form.submit()">
                             <button type="button" class="btn btn-secondary btn-block mt-3" onclick="thisFileUpload()">
-                              Add Photo
+                              Tambah Foto
                             </button>
                           </form>
                         </div>

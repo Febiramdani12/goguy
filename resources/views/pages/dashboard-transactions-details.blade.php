@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('title')
-    Store Dashboard Transaction Details
+    Dashboard Detail Transaksi
 @endsection
 
 @section('content') 
@@ -11,7 +11,7 @@
             <div class="dashboard-heading">
               <h2 class="dashboard-title">#{{$transaction->code}}</h2>
               <p class="dashboard-subtitle">
-                Transactions Details
+                Detail Transaksi
               </p>
             </div>
             <div class="dashboard-content" id="transactionDetails">
@@ -26,27 +26,27 @@
                         <div class="col-12 col-md-8">
                           <div class="row">
                             <div class="col-12 col-md-6">
-                              <div class="product-title">{{$transaction->transaction->user->name}}</div>
-                              <div class="product-subtitle">Angga Risky</div>
+                              <div class="product-title">Nama</div>
+                              <div class="product-subtitle">{{$transaction->transaction->user->name}}</div>
                             </div>
                             <div class="col-12 col-md-6">
-                              <div class="product-title">Product Name</div>
+                              <div class="product-title">Jenis Jasa</div>
                               <div class="product-subtitle">{{$transaction->product->name}}</div>
                             </div>
                             <div class="col-12 col-md-6">
-                              <div class="product-title">Date of Transaction</div>
+                              <div class="product-title">Tanggal Transaksi</div>
                               <div class="product-subtitle">{{$transaction->created_at}}</div>
                             </div>
                             <div class="col-12 col-md-6">
-                              <div class="product-title">Payment Status</div>
-                              <div class="product-subtitle text-danger">{{$transaction->transaction->transaction_status}}</div>
+                              <div class="product-title">Status Pengerjaan</div>
+                              <div class="product-subtitle text-danger">{{$transaction->shipping_status}}</div>
                             </div>
                             <div class="col-12 col-md-6">
-                              <div class="product-title">Total Amount</div>
+                              <div class="product-title">Total Pembayaran</div>
                               <div class="product-subtitle">Rp{{number_format($transaction->transaction->total_price)}}</div>
                             </div>
                             <div class="col-12 col-md-6">
-                              <div class="product-title">Mobile</div>
+                              <div class="product-title">No HP</div>
                               <div class="product-subtitle">{{$transaction->transaction->user->phone_number}}</div>
                             </div>
                           </div>
@@ -56,57 +56,41 @@
                         @csrf
                       <div class="row">
                         <div class="col-12 mt-4">
-                          <h5>Shipping Information</h5>
+                          <h5>Informasi Pengerjaan</h5>
                         </div>
                         <div class="col-12">
                           <div class="row">
                             <div class="col-12 col-md-6">
-                              <div class="product-title">Address I</div>
+                              <div class="product-title">Alamat</div>
                               <div class="product-subtitle">{{$transaction->transaction->user->address_one}}</div>
                             </div>
                             <div class="col-12 col-md-6">
-                              <div class="product-title">Address II</div>
-                              <div class="product-subtitle">{{$transaction->transaction->user->address_two}}</div>
-                            </div>
-                            <div class="col-12 col-md-6">
-                              <div class="product-title">Province</div>
+                              <div class="product-title">Kecamatan</div>
                               <div class="product-subtitle">{{App\Models\Province::find($transaction->transaction->user->provinces_id)->name}}</div>
                             </div>
                             <div class="col-12 col-md-6">
-                              <div class="product-title">City</div>
+                              <div class="product-title">Desa</div>
                               <div class="product-subtitle">{{App\Models\Regency::find($transaction->transaction->user->regencies_id)->name}}</div>
                             </div>
                             <div class="col-12 col-md-6">
-                              <div class="product-title">Postal Code</div>
+                              <div class="product-title">Kode Pos</div>
                               <div class="product-subtitle">{{$transaction->transaction->user->zip_code}}</div>
                             </div>
-                            <div class="col-12 col-md-6">
-                              <div class="product-title">Country</div>
-                              <div class="product-subtitle">{{$transaction->transaction->user->country}}</div>
-                            </div>
                             <div class="col-12 col-md-3">
-                              <div class="product-title">Shipping Status</div>
+                              <div class="product-title">Status Pengerjaan</div>
                               <select name="shipping_status" id="status" class="form-control" v-model="status">
-                                <option value="PENDING">Pending</option>
-                                <option value="SHIPPING">Shipping</option>
-                                <option value="SUCCESS">Success</option>
+                                <option value="Pending">Pending</option>
+                                <option value="Dikerjakan">Dikerjakan</option>
+                                <option value="Selesai">Selesai</option>
                               </select>
                             </div>
-                            <template v-if="status == 'SHIPPING'">
-                              <div class="col-md-3">
-                                <div class="product-title">Input Resi</div>
-                                <input type="text" name="resi" v-model="resi" class="form-control">
-                              </div>
-                              <div class="col-md-2">
-                                <button type="submit" class="btn btn-success btn-block mt-4"> Update Resi </button>
-                              </div>
-                            </template>
+
                           </div>
                         </div>
                       </div>
                       <div class="row mt-4">
                         <div class="col-12 text-right">
-                          <button type="submit" class="btn btn-success btn-lg mt-4"> Save Now </button>
+                          <button type="submit" class="btn btn-success btn-lg mt-4">Save</button>
                         </div>
                       </div>
                       </form>

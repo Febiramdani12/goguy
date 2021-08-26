@@ -1,16 +1,16 @@
 @extends('layouts.admin')
 
 @section('title')
-Product
+Jasa
 @endsection
 
 @section('content')
 <div class="section-content section-dashboard-home" data-aos="fade-up">
     <div class="container-fluid">
         <div class="dashboard-heading">
-            <h2 class="dashboard-title">Product</h2>
+            <h2 class="dashboard-title">Jasa</h2>
             <p class="dashboard-subtitle">
-                List Of Products
+            
             </p>
         </div>
         <div class="dashboard-content">
@@ -19,7 +19,7 @@ Product
                     <div class="card">
                         <div class="card-body">
                             <a href="{{route('product.create')}}" class="btn btn-primary mb-3">
-                                + Tambah Product
+                                + Tambah Jasa 
                             </a>
                             <div class="table-responsive">
                                 <table class="table table-hover scroll-horizontal-vertical w-100" id="crudTable">

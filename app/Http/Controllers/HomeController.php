@@ -8,6 +8,11 @@ use App\Product;
 
 class HomeController extends Controller
 {
+        public function __construct()
+    {
+        $this->middleware('verified');
+    }
+
     /**
      * Show the application dashboard.
      *

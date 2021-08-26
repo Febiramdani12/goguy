@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
+        public function __construct()
+    {
+        $this->middleware('verified');
+    }
     /**
      * Show the application dashboard.
      *
