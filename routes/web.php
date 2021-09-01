@@ -83,6 +83,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/dashboard/account/{redirect}', 'DashboardSettingController@update')->name('dashboard-settings-redirect');
 });
 
+Route::get('/offline', function () {    
+return view('vendor/laravelpwa/offline');
+});
+
 Route::get('/admin/trx/', 'TrxAdminController@index')->name('trx');
 Route::get('/admin/trx/{id}', 'TrxAdminController@details')->name('trx-details');
 //     ->middleware(['auth', 'admin'])
