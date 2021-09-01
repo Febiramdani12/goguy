@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\TrxAdminModel;
+use App\TransactionDetail;
 
 class TrxAdminController extends Controller
 {
@@ -20,6 +21,14 @@ class TrxAdminController extends Controller
     	 ];
 
     	return view('pages.admin.trx', $data);
-
     }
+
+       public function details(Request $request, $id)
+    {
+        $transaction = TransactionDetail::with(['transaction.user', 'product.galleries'])->findOrFail($id);
+        return view('pages.admin.trx-details', [
+            'transaction' => $transaction
+        ]);
+    }
+
 }

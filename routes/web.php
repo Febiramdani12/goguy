@@ -84,7 +84,7 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 Route::get('/admin/trx/', 'TrxAdminController@index')->name('trx');
-
+Route::get('/admin/trx/{id}', 'TrxAdminController@details')->name('trx-details');
 //     ->middleware(['auth', 'admin'])
 Route::prefix('admin')
     ->namespace('Admin')

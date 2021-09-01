@@ -10,7 +10,6 @@
             <div class="dashboard-heading">
               <h2 class="dashboard-title">Kategori</h2>
               <p class="dashboard-subtitle">
-              
               </p>
             </div>
             <div class="dashboard-content">
@@ -28,7 +27,6 @@
                                         <th>No</th>
                                         <th>Nama</th>
                                         <th>Foto</th>
-                                       
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>

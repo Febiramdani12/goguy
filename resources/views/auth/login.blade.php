@@ -53,7 +53,7 @@
             </div>
         </div>
     </div>
-
+    
     {{-- /content login store --}}
 
     <div class="container" style="display: none;">

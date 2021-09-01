@@ -10,47 +10,44 @@
             <div class="dashboard-heading">
               <h2 class="dashboard-title">Daftar Transaksi</h2>
               <p class="dashboard-subtitle">
-              
               </p>
             </div>
+            <div class="dashboard-content">
+            <div class="row">
+            <div class="col-md-12">
+            <div class="card">
+            <div class="card-body">
             <div class="dashboard-content">
               <div class="row">
                 <div class="col-12 mt2">
                   <!-- Pembukaan nav pills nya lung -->
                   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                      <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
-                        aria-controls="pills-home" aria-selected="true">Transaksi</a>
-                    </li>
                   </ul>
                   <!-- penutup nav pills -->
 
                   <!-- Isi dari nav pills -->
-                  <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
-                      aria-labelledby="pills-home-tab">
-                    @foreach ($trx as $t)
-                      <a href="{{route('dashboard-transaction-details', $t->id)}}" class="card card-list d-block">
-                        <div class="card-body">
-                          <div class="row">
-                            <div class="col-md-1">
-                             
-                            </div>
-                            <div class="col-md-4">
-                            </div>
-                            <div class="col-md-3">
-                            </div>
-                            <div class="col-md-3">
-                              {{$t->created_at}}
-                            </div>
-                            <div class="col-md-1 d-none d-md-block">
-                              <img src="/images/dashboard-arrow-right.svg" alt="">
-                            </div>
-                          </div>
-                        </div>
-                      </a> 
-                    @endforeach
-                    </div>
+                 <div class="table-responsive">
+                                <table class="table table-hover scroll-horizontal-vertical w-100" id="crudTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Nomor</th>
+                                            <th>Transaksi ID</th>
+                                            <th>Store Name</th>
+                                            <th>Jasa</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php $no=1; ?>
+                                      @foreach ($trx as $item)
+                                         <tr>
+                            <td>{{ $no++ }}</td>
+                            <td><a href="{{route('trx-details', $item->transactions_id)}}"> {{$item->code}}</a></td>
+                                            <td>{{$item->store_name}}</td>
+                                            <td>{{$item->slug}}</td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
                   </div>
                   <!-- penutupan dari nav pills -->
 
@@ -62,3 +59,12 @@
       </div>
 @endsection
 
+@push('addon-script')
+<script>
+    var datatable = $('#crudTable').DataTable({
+        processing: true,
+        serverSide: false,
+        ordering: true,
+    })
+</script>
+@endpush

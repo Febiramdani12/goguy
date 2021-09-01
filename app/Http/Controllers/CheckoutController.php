@@ -35,7 +35,7 @@ class CheckoutController extends Controller
             'inscurance_price' => 0,
             'shipping_price' => 0,
             'total_price' => $request->total_price,
-            'transaction_status' => '',
+            'transaction_status' => 'PENDING',
             'code' => $code,
         ]);
 
@@ -47,7 +47,7 @@ class CheckoutController extends Controller
                 'transactions_id' => $transaction->id,
                 'products_id' => $cart->product->id,
                 'price' => $cart->product->price,
-                'shipping_status' => '',
+                'shipping_status' => 'PENDING',
                 'resi' => '',
                 'code' => $trx,
             ]);
