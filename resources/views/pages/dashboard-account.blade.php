@@ -62,12 +62,12 @@
                             <select v-else class="form-control"></select>
                           </div>
                         </div>
-                          <div class="col-md-4">
+                          <!--<div class="col-md-4">
                             <div class="form-group">
                               <label for="zip_code">Kode Pos</label>
                               <input type="text" id="zip_code" name="zip_code" value="{{$user->zip_code}}" class="form-control">
                             </div>
-                          </div>
+                          </div>-->
                 
                           <div class="col-md-6">
                             <div class="form-group">

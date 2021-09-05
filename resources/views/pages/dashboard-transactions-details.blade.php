@@ -72,10 +72,10 @@
                               <div class="product-title">Desa</div>
                               <div class="product-subtitle">{{App\Models\Regency::find($transaction->transaction->user->regencies_id)->name}}</div>
                             </div>
-                            <div class="col-12 col-md-6">
+                            <!--<div class="col-12 col-md-6">
                               <div class="product-title">Kode Pos</div>
                               <div class="product-subtitle">{{$transaction->transaction->user->zip_code}}</div>
-                            </div>
+                            </div>-->
                             <div class="col-12 col-md-3">
                               <div class="product-title">Status Pengerjaan</div>
                               <select name="shipping_status" id="status" class="form-control" v-model="status">
