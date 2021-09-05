@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-@laravelPWA
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -36,7 +35,7 @@
 
 <!-- Tile for Win8 -->
 <meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/images/icons/icon-512x512.png">
+<meta name="msapplication-TileImage" content="/images/icons/icon 512x512.png">
 
   <title>@yield('title')</title>
   @stack('prepend-style')
@@ -44,7 +43,7 @@
   <link href="{{ url('/style/main.css') }}" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.22/datatables.min.css"/>
   @stack('addon-style')
-
+    @laravelPWA
 </head>
 
 <body>
