@@ -87,6 +87,10 @@ Route::get('/offline', function () {
 return view('vendor/laravelpwa/offline');
 });
 
+Route::get('/success', function () {    
+return view('pages/success');
+});
+
 Route::get('/admin/trx/', 'TrxAdminController@index')->name('trx');
 Route::get('/admin/trx/{id}', 'TrxAdminController@details')->name('trx-details');
 //     ->middleware(['auth', 'admin'])
