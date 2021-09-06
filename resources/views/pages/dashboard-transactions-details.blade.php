@@ -39,7 +39,7 @@
                             </div>
                             <div class="col-12 col-md-6">
                               <div class="product-title">Status Pengerjaan</div>
-                              <div class="product-subtitle text-danger">{{$transaction->shipping_status}}</div>
+                              <div class="product-subtitle text-danger">{{$transaction->shipping_status->status}}</div>
                             </div>
                             <div class="col-12 col-md-6">
                               <div class="product-title">Total Pembayaran</div>
@@ -79,7 +79,7 @@
                             <div class="col-12 col-md-3">
                               <div class="product-title">Status Pengerjaan</div>
                               <select name="shipping_status" id="status" class="form-control" v-model="status">
-                                <option value="Pending">Pending</option>
+                                <option value="Pending">Dibatalkan</option>
                                 <option value="Dikerjakan">Dikerjakan</option>
                                 <option value="Selesai">Selesai</option>
                               </select>
