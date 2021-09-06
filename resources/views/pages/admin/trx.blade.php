@@ -32,7 +32,7 @@
                                         <tr>
                                             <th>Nomor</th>
                                             <th>Transaksi ID</th>
-                                            <th>Penyedia Jasa</th>
+                                            <th>Nama Jasa</th>
                                             <th>Tanggal Transaksi</th>
                                         </tr>
                                     </thead>
@@ -42,7 +42,7 @@
                                          <tr>
                             <td>{{ $no++ }}</td>
                             <td><a href="{{route('trx-details', $item->transactions_id)}}"> {{$item->code}}</a></td>
-                                            <td>{{$item->store_name}}</td>
+                                            <td>{{$item->product}}</td>
                                             <td>{{$item->created_at}}</td>
                                         </tr>
                                         @endforeach

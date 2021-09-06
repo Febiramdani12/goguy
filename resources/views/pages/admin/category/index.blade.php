@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Kategori    
+    Dashboard Kategori    
 @endsection
 
 @section('content')

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Edit Kategori    
+    Dahsboard Edit Kategori    
 @endsection
 
 @section('content')

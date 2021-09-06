@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Jasa  
+    Dashboard Edit Jasa  
 @endsection
 
 @section('content')
@@ -45,6 +45,17 @@
                                             @foreach ($users as $user)
                                             
                                         <option value="{{$user->id}}">{{$user->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="">Kategori</label>
+                                        <select name="categories_id" class="form-control">
+                                        <option value="{{$item->categories_id}}" selected>{{$item->category->name}}</option>
+                                            @foreach ( $categories as $category)
+                                        <option value="{{$category->id}}">{{$category->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
