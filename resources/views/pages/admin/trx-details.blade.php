@@ -26,7 +26,7 @@
                         <div class="col-12 col-md-8">
                           <div class="row">
                             <div class="col-12 col-md-6">
-                              <div class="product-title">Nama</div>
+                              <div class="product-title">Pemesan Jasa</div>
                               <div class="product-subtitle">{{$transaction->transaction->user->name}}</div>
                             </div>
                             <div class="col-12 col-md-6">

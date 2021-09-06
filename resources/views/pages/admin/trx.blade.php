@@ -32,7 +32,7 @@
                                         <tr>
                                             <th>Nomor</th>
                                             <th>Transaksi ID</th>
-                                            <th>Nama Jasa</th>
+                                            <th>Penyedia Jasa</th>
                                             <th>Tanggal Transaksi</th>
                                         </tr>
                                     </thead>
