@@ -9,7 +9,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                    <a <a  class="nav-link"  href="{{route('dashboard')}}" class="dropdown-item">Dashboard</a>
+                    <a class="nav-link"  href="{{route('dashboard')}}" class="dropdown-item">Dashboard</a>
                     </li>
                     @guest
                     <li class="nav-item">
