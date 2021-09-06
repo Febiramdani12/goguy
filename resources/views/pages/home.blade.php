@@ -52,7 +52,7 @@
         <section class="store-new-products">
             <div class="container">
                     <div class="row">
-                        <div class="col-12" data-aos="fade-aos">
+                        <div class="col-12" data-aos="fade-up">
                             <h5>Jasa</h5>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                             </div> 
                         @empty
                             <div class="col-12 text-center py-5" data-aos="fade-up" data-aos-delay="100">
-                                Jasa Belum Tersedia
+                                    Jasa Belum Ada
                                 </div>
                         @endforelse
                     
