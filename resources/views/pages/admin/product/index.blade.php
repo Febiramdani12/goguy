@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-Jasa
+Dashboard Jasa
 @endsection
 
 @section('content')
