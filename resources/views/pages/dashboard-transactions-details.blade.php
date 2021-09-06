@@ -39,7 +39,7 @@
                             </div>
                             <div class="col-12 col-md-6">
                               <div class="product-title">Status Pengerjaan</div>
-                              <div class="product-subtitle text-danger">{{$transaction->shipping_status->status}}</div>
+                              <div class="product-subtitle text-danger">{{$transaction->status}}</div>
                             </div>
                             <div class="col-12 col-md-6">
                               <div class="product-title">Total Pembayaran</div>
