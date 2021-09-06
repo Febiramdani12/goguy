@@ -51,17 +51,6 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="">Pemilik Jasa</label>
-                                        <select name="categories_id" class="form-control">
-                                        <option value="{{$item->categories_id}}" selected>{{$item->category->name}}</option>
-                                            @foreach ( $categories as $category)
-                                        <option value="{{$category->id}}">{{$category->name}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
                                         <label for="">Harga</label>
                                     <input type="number" value="{{$item->price}}" name="price" class="form-control" required>
                                     </div>
