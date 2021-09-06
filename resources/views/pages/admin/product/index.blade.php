@@ -39,6 +39,7 @@ Jasa
                                     <tr>
                                     <td>{{ $no++ }}</td>
                                         {{-- isi untuk table nya --}}
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>
