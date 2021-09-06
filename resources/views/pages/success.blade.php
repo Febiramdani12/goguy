@@ -1,7 +1,7 @@
 @extends('layouts.success')
 
 @section('title')
-    Success   
+    Notifikasi Pembayaran   
 @endsection
 
 @section('content')
@@ -10,7 +10,7 @@
       <div class="container">
         <div class="row align-items-center row-login justify-content-center">
           <div class="col-lg-6 text-center">
-            <img src="/images/success.svg" class="mb-4" alt="">
+            <img src="/images/hand.png" class="mb-4" alt="">
             <h2>
               Pembayaran Berhasil
             </h2>
