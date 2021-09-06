@@ -46,6 +46,16 @@
                           </div>
                           <div class="col-md-12">
                             <div class="form-group">
+                              <label for="">Pemilik Jasa</label>
+                              <select name="users_id" class="form-control">
+                              @foreach ($users as $user)
+                              <option value="{{$user->id}}">{{$user->name}}</option>
+                              @endforeach
+                              </select>
+                              </div>
+                              </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
                               <label for="">Kategori</label>
                                 <select name="categories_id" class="form-control">
                                 <option value="{{$product->categories_id}}">Tidak diganti ({{$product->category->name}})</option>

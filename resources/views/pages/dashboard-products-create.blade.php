@@ -43,6 +43,15 @@
                               <input type="number" class="form-control"  name="price" />
                             </div>
                           </div>
+                          <div class="form-group">
+                              <label for="">Pemilik Jasa</label>
+                              <select name="users_id" class="form-control">
+                              @foreach ($users as $user)
+                              <option value="{{$user->id}}">{{$user->name}}</option>
+                              @endforeach
+                              </select>
+                              </div>
+                              </div>
                           <div class="col-md-12">
                             <div class="form-group">
                               <label for="">Kategori</label>
