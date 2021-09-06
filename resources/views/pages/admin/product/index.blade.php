@@ -34,6 +34,10 @@ Jasa
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php $no=1; ?>
+                                    @foreach ($product as $item)
+                                    <tr>
+                                    <td>{{ $no++ }}</td>
                                         {{-- isi untuk table nya --}}
                                     </tbody>
                                 </table>

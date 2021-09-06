@@ -66,9 +66,6 @@
                             <div class="form-group">
                               <label for="">Foto</label>
                               <input type="file" name="photo" class="form-control"  />
-                              <p class="text-muted">
-                                Kamu dapat memilih lebih dari satu file!
-                              </p>
                             </div>
                           </div>
                         </div>
