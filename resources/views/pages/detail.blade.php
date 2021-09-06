@@ -54,7 +54,7 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <h1>{{ $product->name }}</h1>
-                            <div class="owner">Jasa Oleh : {{$product->name}}</div>
+                            <div class="owner">Jasa Oleh : {{ $product->user->name }}</div>
                              <div class="owner">
                                  <a href="https://wa.me/{{ $product->user->phone_number }}?text=Halo,%20saya%20butuh%20jasa%20{{ $product->name }}">WhatsApp</a>
                              </div>
